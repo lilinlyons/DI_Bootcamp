@@ -1,0 +1,67 @@
+p {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 30px;
+}
+
+.grid-container {
+
+    display: grid;
+    column-gap: 50px;
+    row-gap: 50px;
+    width: 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+
+}
+
+
+body > div
+{
+    transition:all 0.3s ease;
+
+}
+
+.fade-out{
+    background:#676470;
+    opacity: 0.2;
+    display:inline-block;
+}
+
+.fade-out:hover {
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+
+
+.colour{
+    background-color: red;
+    display:inline-block;
+}
+
+.colour:hover {
+    background-color: #48d7e8;
+    transition: 1s ease-in-out;
+}
+
+
+.shrink{
+    background-color: #48d7e8;
+    display:inline-block;
+}
+
+.shrink:hover{
+    transform: scale(0.5)
+
+}
+
+
+.rotate{
+    background-color: yellow;
+    display:inline-block;
+}
+
+.rotate:hover{
+    transform: rotate(-45deg);
+
+}
