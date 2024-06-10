@@ -1,5 +1,4 @@
 # Challenge 1
-
 number = int(input("Please insert a number: "))
 length = int(input("Please insert a length: "))
 
