@@ -1,4 +1,3 @@
-import numpy
 
 # Exercise 1
 my_fav_numbers={4 ,8, 10}
