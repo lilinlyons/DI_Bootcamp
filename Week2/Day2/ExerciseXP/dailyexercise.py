@@ -47,13 +47,7 @@ while i < 5:
 for i in range(1,21):
     print(i)
 
-for index,value in enumerate(range(1 ,21)):
-    if index % 2 == 0:
-        print(value)
-
-    else:
-        pass
-
+for i in range(1, 21, 2): print(i)
 
 # Exercise 6
 name = 0
@@ -96,8 +90,6 @@ while input_toppings != 'quit':
 
 
 # Exercise 9
-
-ages = input("What are the ages of your family members separated by spaces: ")
 ages = [int(x) for x in input("What are the ages of your family members separated by spaces: ").split()]
 
 total_price = 0
@@ -116,8 +108,7 @@ teenager_names = ['Harry', 'Amy', 'Hannah']
 for element in teenager_names[:]:
     teenager_age = int(input("Input your age, "+ element +": "))
 
-    if 16 <= teenager_age <= 21:
-        teenager_names.remove(element)
+    teenager_names = [name for name in teenager_names if not (16 <= int(input(f"Input your age, {name}: ")) <= 21)]
 
 print("Final list: {}".format(teenager_names))
 
