@@ -48,8 +48,8 @@ def main():
         RandomSentence(int(length)).sentence_builder()
 
 #
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
 
 
 
