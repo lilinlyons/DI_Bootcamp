@@ -23,6 +23,7 @@ def main():
                 anagrams = ", ".join(anagrams)
                 print(f"Your word is: {word}")
                 print(f"The anagrams for this are {anagrams}")
+
         elif choice == '2':
             print("Exiting the program. Goodbye!")
             break
