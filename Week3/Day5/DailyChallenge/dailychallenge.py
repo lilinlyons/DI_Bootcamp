@@ -24,8 +24,9 @@ class Deck:
         else:
             print(f'Card pack is incomplete, only {len(self.pack)} cards available out of 52.')
 
-        random.shuffle(self.pack)
 
+        random.shuffle(self.pack)
+        return self.pack
     def deal(self):
         if not self.pack:
             return 'No cards left to deal.'
