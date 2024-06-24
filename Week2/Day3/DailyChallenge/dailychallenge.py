@@ -1,19 +1,19 @@
 # Challenge 1
-
-word = input("Please enter a word: ")
-
-letters = list(word)
-word_dictionary = {}
-
-for index, letter in enumerate(letters):
-    if letter in word_dictionary.keys():
-        word_dictionary[letter].append(index)
-
-
-    else:
-        word_dictionary[letter] = [index]
-
-print(word_dictionary)
+#
+# word = input("Please enter a word: ")
+#
+# letters = list(word)
+# word_dictionary = {}
+#
+# for index, letter in enumerate(letters):
+#     if letter in word_dictionary.keys():
+#         word_dictionary[letter].append(index)
+#
+#
+#     else:
+#         word_dictionary[letter] = [index]
+#
+# print(word_dictionary)
 
 
 # Challenge 2
@@ -29,15 +29,18 @@ items_purchase = {
     "TV": "$80"
 }
 
-wallet = 75
+wallet = int(input('How much money would you like to spend in the shops: '))
 can_afford = []
+spent = 0
 
 for key in items_purchase.keys():
     # removes dollar from front and comma from thousands
     new_item_price = int(items_purchase[key][1:].replace(',',''))
     items_purchase[key] = new_item_price
 
-    if new_item_price <= wallet:
+    spent+=new_item_price
+    if spent <= wallet:
+
         can_afford.append(key)
 
     else:
