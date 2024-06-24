@@ -4,17 +4,14 @@ word = input("Please enter a word: ")
 
 letters = list(word)
 word_dictionary = {}
-i=0
 
-for letter in letters:
+for index, letter in enumerate(letters):
     if letter in word_dictionary.keys():
-        word_dictionary[letter].append(i)
+        word_dictionary[letter].append(index)
 
 
     else:
-        word_dictionary[letter] = [i]
-
-    i+=1
+        word_dictionary[letter] = [index]
 
 print(word_dictionary)
 
