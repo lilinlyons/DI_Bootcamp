@@ -2,7 +2,7 @@
 --  it will return number 3
 
 -- q2
---  it will return number 3
+--  it will return number 2
 
 
 -- q3
@@ -33,13 +33,6 @@ CREATE TABLE SecondTab (
 INSERT INTO SecondTab VALUES
 (5),
 (NULL)
-
-
-SELECT * FROM SecondTab
-
-	
-SELECT *
-FROM firsttab AS ft WHERE ft.id NOT IN (SELECT id FROM secondtab WHERE id IS NULL)
 
 
 
