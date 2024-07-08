@@ -50,3 +50,14 @@ function highscore(){
 
 let winners = highscore()
 
+
+
+function totalscore(){
+    let initValue = 0
+    gameInfo.forEach((item) => {
+        initValue += item['score']
+    })
+    console.log(`the total score is ${initValue}`)
+}
+
+totalscore()
