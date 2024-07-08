@@ -20,7 +20,7 @@ colors.forEach((item, index, arr) => {
 
 )
 
-/
+
 // Exercise 3
 // ------1------
 const fruits = ["apple", "orange"];
@@ -34,12 +34,12 @@ console.log(result);
 const country = "USA";
 console.log([...country]);
 
-result = ['U', 'S', 'A']
+// result = ['U', 'S', 'A']
 
 // ------Bonus------
 let newArray = [...[,,]];
 console.log(newArray);
- result [,,]
+ // result [,,]
 
 
 // Exercise 4
