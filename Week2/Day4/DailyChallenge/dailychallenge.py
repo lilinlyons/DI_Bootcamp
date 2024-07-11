@@ -51,8 +51,9 @@ def delete_spaces():
 
     while(j<len(decoded_matrix)):
 
-        if( decoded_matrix[i]==decoded_matrix[j]=='' ):
+        if( decoded_matrix[i]==decoded_matrix[j]=='' and decoded_matrix[j + 1] == ''):
             j+=1
+            new_elements += ''
 
         elif((decoded_matrix[j]!=decoded_matrix[i]) or (j==len(decoded_matrix)-1)):
             new_elements+=decoded_matrix[i]

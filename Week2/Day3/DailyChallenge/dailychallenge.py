@@ -43,8 +43,6 @@ for key in items_purchase.keys():
 
         can_afford.append(key)
 
-    else:
-        pass
 
 can_afford = sorted(can_afford)
 
