@@ -1,0 +1,35 @@
+
+.img-grid { width: 100%; }
+
+.row { width: 100%; display: flex; }
+img { width: 100%;
+text-align: center}
+
+
+.input{
+
+    text-align: center;
+}
+.img-wrapper
+{
+    flex: 1;
+    background-image: url("cardbackground.png");
+    background-color: white;
+    gap: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+body {
+    background-image: url("background.png");
+    background-color: #b533ec;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #42b615;
+    overflow: hidden;
+    font-family: 'SEGA LOGO FONT', sans-serif;;
+}
+
+
