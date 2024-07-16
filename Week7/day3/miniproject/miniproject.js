@@ -25,7 +25,7 @@ search.addEventListener('click', function () {
                 if (response.ok) {
                     return response.json();
                 } else {
-                    throw new Error('Response not okay');
+                    throw new Error('Oh No! That person is not available.');
                 }
             })
             .then(async (data) => {
