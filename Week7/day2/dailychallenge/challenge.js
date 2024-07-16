@@ -28,8 +28,9 @@ search.addEventListener('click', function () {
             let newImg = document.createElement('img');
             // <button className="btn delete" type="submit">Delete</button>
             let newDelete = document.createElement('button')
+            newDelete.className = 'btn delete'
             newDelete.innerText = 'Delete'
-            newDelete.type = 'submit'
+            newDelete.type = 'button'
 
             newImg.src = imageUrl;
             newImg.style.width = '200px';
@@ -37,9 +38,36 @@ search.addEventListener('click', function () {
             newElement.append(newDelete)
             newElement.append(newImg);
 
-            existingList.append(newElement);
+            existingList.append(newElement)
+
+            newDelete.addEventListener('click', function () {
+                newElement.remove();
+            });
+
         })
         .catch((e) => {
             console.log(e);
         });
 });
+
+
+const deleteAll = document.getElementsByClassName('btn deleteAll')[0];
+deleteAll.addEventListener('click', function () {
+    const section = document.getElementById("gifs");
+    while (section.firstChild) {
+        section.removeChild(section.firstChild);
+    }
+}
+)
+
+
+
+
+const deleteElement = document.getElementsByClassName('btn delete');
+deleteAll.addEventListener('click', function () {
+        deleteElement.remove()
+
+    }
+)
+
+
