@@ -1,0 +1,42 @@
+.ccyBtn {
+    border-radius: 8px;
+    outline: 2px solid #eedddd;
+    color: #000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.ccyBtn.from {
+    background-color: #d943ec;
+}
+
+.ccyBtn.to {
+    background-color: #1e90ff;
+}
+
+.ccyBtn:hover {
+    background-color: #ead8d8;
+    color: #1e1b1b;
+}
+
+
+
+
+.currencies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px;
+    z-index: 1000;
+}
+
