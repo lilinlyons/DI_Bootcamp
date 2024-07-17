@@ -1,0 +1,1 @@
+{"type":"module","name":"dailychallenge","version":"1.0.0","main":"../task1/app.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"author":"","license":"ISC","dependencies":{"chalk":"^5.3.0"},"description":""}
