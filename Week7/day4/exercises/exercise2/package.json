@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "name": "day4-exercise2",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --experimental-modules app.js"
+  }
+}
