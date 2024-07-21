@@ -1,5 +1,16 @@
 import express from 'express';
-import fs from 'fs';
+
+const app = express();
+
+import bodyParser from 'body-parser';
+
+const port = 5000;
+
+app.use(express.json());
+
+app.listen(port, () => {
+    console.log(`server is listening on port ${port}`)
+})
 
 const books = [
     {
@@ -41,30 +52,34 @@ const books = [
 ];
 
 
-const app = express();
-
-const port = 5000;
-
-app.use(express.json());
-
-app.listen(port, () => {
-    console.log(`server is listening on port ${port}`)
-})
 
 
-
-app.get('/books/', (req, res) => {
+app.get('/books', (req, res) => {
     res.json(books);
 });
 
 
-app.get("/books/:blogID/", (req, res) => {
-    const id = Number(req.params.blogID);
-    const book = books.find((book) => book.id === id);
-    if (!book) {
-        return res.status(404).json({ message: 'Book not found' });
+app.get("/books/:id", (req, res) => {
+    const {id} = req.params
+
+    const index = books.findIndex((item) => item.id == id);
+    console.log(index)
+    if (index === -1) {
+        return res.status(404).json({ message: "Book not found" });
     }
-    res.json(book);
 
 
+    res.json(books[index]).status(200);
+
+});
+
+
+// use of middleware
+app.use(express.json());
+
+app.post("/books", (req, res) => {
+    const { title, author, publishedYear } = req.body;
+    const newBook = { ...req.body, id: books.length + 1 };
+    books.push(newBook);
+    res.json({ books, msg: "created", status: 201, active: true });
 });

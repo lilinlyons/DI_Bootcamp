@@ -1,14 +1,16 @@
-import express from 'express';
+const express = require("express");
 
 const app = express();
 
-const port = 3001;
+const port = 5000;
 
 app.use(express.json());
 
+app.use("/", express.static(__dirname ));
+
 app.listen(port, () => {
-    console.log('server is listening on port 5000')
-})
+    console.log(`Server running at http://localhost:${port}/`);
+});
 
 let blogs = [
     {
@@ -49,32 +51,40 @@ app.get("/posts/:blogID", (req, res) => {
 });
 
 
-blogs.push({
-    id: 6,
-    title: "Fitness Routines",
-    content: "Effective workouts for beginners."
-})
-app.post('/posts', (req, res) => {
-    console.log(req.body)
-
-    res.json(blogs)
-})
-
-app.put('/posts/:id', (req, res) => {
-    const id = 4
-    const { content } = req.body;
-
-    const blogIndex = blogs.findIndex(b => b.id === id);
-    if (blogIndex !== -1) {
-        blogs[blogIndex].content = "Newest Technology";
-        res.json(blogs[blogIndex]);
-    } else {
-        res.status(404).json({ error: "Blog post not found" });
-    }
+app.post("/posts", (req, res) => {
+    console.log(req.body);
+    const { id, title, content } = req.body;
+    const newPost = { ...req.body, id: blogs.length + 1 };
+    blogs.push(newPost);
+    res.json(blogs);
 });
 
+app.put("/posts/:id", (req, res) => {
+    const { id } = req.params;
+    const { title, content } = req.body;
+    const index = blogs.findIndex((item) => item.id == id);
+    if (index === -1) {
+        return res.status(404).json({ message: "not found" });
+    }
 
+    blogs[index] = {
+        ...blogs[index],
+        title,
+        content,
+    };
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+    res.json({ blogs, msg: "ok", status: 111, active: true });
+});
+
+app.delete("/posts/:id", (req, res) => {
+    const { id } = req.params;
+    const index = blogs.findIndex((item) => item.id == id);
+
+    if (index === -1) {
+        return res.status(404).json({ message: "not found" });
+    }
+
+    blogs.splice(index, 1);
+
+    res.json(blogs);
 });
