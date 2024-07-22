@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="468040d7-5b78-4f9e-b18f-743725d88568" name="Changes" comment="finished daily challenge">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="468040d7-5b78-4f9e-b18f-743725d88568" name="Changes" comment="working daily challenge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week2/Day1/ExerciseXP/mandatoryexercise.py" beforeDir="false" afterPath="$PROJECT_DIR$/Week2/Day1/ExerciseXP/mandatoryexercise.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Week2/Day2/exercise.py" beforeDir="false" afterPath="$PROJECT_DIR$/Week2/Day2/exercise.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +22,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -59,6 +62,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "advanced.settings",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -178,13 +182,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.ExercisesXP" />
+      <item itemvalue="Python.dailychallenge" />
+      <item itemvalue="Python.dailychallenge (1)" />
+      <item itemvalue="Python.dailychallenge (2)" />
+      <item itemvalue="Python.mini-project" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mini-project" />
+        <item itemvalue="Python.dailychallenge (2)" />
+        <item itemvalue="Python.dailychallenge (1)" />
         <item itemvalue="Python.dailychallenge" />
         <item itemvalue="Python.ExercisesXP" />
-        <item itemvalue="Python.dailychallenge (2)" />
-        <item itemvalue="Python.mini-project" />
-        <item itemvalue="Python.dailychallenge (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -309,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718537344755</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="working daily challenge">
+      <option name="closed" value="true" />
+      <created>1721661467659</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1721661467659</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +358,8 @@
     <MESSAGE value="Daily challenge" />
     <MESSAGE value="finished daily exercises" />
     <MESSAGE value="finished daily challenge" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished daily challenge" />
+    <MESSAGE value="working daily challenge" />
+    <option name="LAST_COMMIT_MESSAGE" value="working daily challenge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -353,14 +373,25 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DI_Bootcamp$dailyexercises.coverage" NAME="dailyexercises Coverage Results" MODIFIED="1718106528289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day3/ExercisesXP" />
     <SUITE FILE_PATH="coverage/DI_Bootcamp$mini_project.coverage" NAME="mini-project Coverage Results" MODIFIED="1718462945551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day5/Exercises" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$rock_paper_scissors.coverage" NAME="rock-paper-scissors Coverage Results" MODIFIED="1718885691350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day5/MiniProject/RockPaperScissors" />
     <SUITE FILE_PATH="coverage/DI_Bootcamp$ExercisesXP.coverage" NAME="ExercisesXP Coverage Results" MODIFIED="1718535667839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day1/Exercises" />
-    <SUITE FILE_PATH="coverage/DI_Bootcamp$dailychallenge__2_.coverage" NAME="dailychallenge (2) Coverage Results" MODIFIED="1718528809602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day5/DailyChallenge" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$app.coverage" NAME="app Coverage Results" MODIFIED="1719734039248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hackathon1" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$dailychallenge__2_.coverage" NAME="dailychallenge (2) Coverage Results" MODIFIED="1719228169846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day4/DailyChallenge" />
     <SUITE FILE_PATH="coverage/DI_Bootcamp$dailyexercise.coverage" NAME="dailyexercise Coverage Results" MODIFIED="1718015934767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day2/ExerciseXP" />
-    <SUITE FILE_PATH="coverage/DI_Bootcamp$dailychallenge__1_.coverage" NAME="dailychallenge (1) Coverage Results" MODIFIED="1718276534531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day4/DailyChallenge" />
-    <SUITE FILE_PATH="coverage/DI_Bootcamp$dailychallenge.coverage" NAME="dailychallenge Coverage Results" MODIFIED="1718537322181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day1/DailyChallenge" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$anagram_checker.coverage" NAME="anagram_checker Coverage Results" MODIFIED="1718879723882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day5/MiniProject/AnagramProject" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$func.coverage" NAME="func Coverage Results" MODIFIED="1718724590500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day3/Exercises" />
     <SUITE FILE_PATH="coverage/DI_Bootcamp$exercise.coverage" NAME="exercise Coverage Results" MODIFIED="1718006512913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day2" />
     <SUITE FILE_PATH="coverage/DI_Bootcamp$dailyexercises__1_.coverage" NAME="dailyexercises (1) Coverage Results" MODIFIED="1718273606350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day4/ExercisesXP" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$game.coverage" NAME="game Coverage Results" MODIFIED="1718883699980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day5/MiniProject/RockPaperScissors" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$ExercisesXP__1_.coverage" NAME="ExercisesXP (1) Coverage Results" MODIFIED="1718625951093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day2/Exercises" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$dailyexercises.coverage" NAME="dailyexercises Coverage Results" MODIFIED="1720700358822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day3/ExercisesXP" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$anagrams.coverage" NAME="anagrams Coverage Results" MODIFIED="1718881743969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day5/MiniProject/AnagramProject" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$Exercise3.coverage" NAME="Exercise3 Coverage Results" MODIFIED="1718622510241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day2/Exercises" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$ExercisesXP__2_.coverage" NAME="ExercisesXP (2) Coverage Results" MODIFIED="1718810731985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week3/Day4/Exercises" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$dailychallenge__1_.coverage" NAME="dailychallenge (1) Coverage Results" MODIFIED="1719227165554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day3/DailyChallenge" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$dailychallenge.coverage" NAME="dailychallenge Coverage Results" MODIFIED="1720678884915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week2/Day3/DailyChallenge" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$menu_item.coverage" NAME="menu_item Coverage Results" MODIFIED="1719405102563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week4/Day4/Exercises" />
+    <SUITE FILE_PATH="coverage/DI_Bootcamp$menu_manager.coverage" NAME="menu_manager Coverage Results" MODIFIED="1719405116053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Week4/Day4/Exercises" />
   </component>
 </project>

@@ -1,0 +1,209 @@
+Index: hackathon1/main_sql.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hackathon1/main_sql.sql b/hackathon1/main_sql.sql
+new file mode 100644
+--- /dev/null	(date 1719732246474)
++++ b/hackathon1/main_sql.sql	(date 1719732246474)
+@@ -0,0 +1,56 @@
++-- CREATE TABLE main (
++--     id serial PRIMARY KEY,
++--     item varchar(256) NOT NULL,
++--     date_of_completion date,
++--     completed_by varchar(100),
++--     link text,
++--     is_completed bool NOT NULL default false 
++-- );
++
++-- INSERT INTO main (item, date_of_completion, completed_by, link, is_completed)
++--         VALUES ('', , '', '', '');
++
++conn = sqlite3.connect('       ')
++cursor = conn.cursor()
++
++
++cursor.execute('''
++CREATE TABLE IF NOT EXISTS main (
++    id integer PRIMARY KEY,
++    item varchar(200) NOT NULL,
++    date_of_completion date,
++    completed_by varchar(50),
++    link text,
++    is_completed boolean NOT NULL DEFAULT false
++)
++''')
++conn.commit()
++
++
++
++def mark_as_completed(task_id):
++    cursor.execute('''
++    UPDATE main
++    SET is_completed = true
++    WHERE id = ?
++    ''', (task_id,))
++    conn.commit()
++
++def view_all_tasks():
++    cursor.execute('SELECT * FROM main')
++    return cursor.fetchall()
++
++def view_completed_tasks():
++    cursor.execute('SELECT * FROM main WHERE is_completed = true')
++    return cursor.fetchall()
++
++def view_incomplete_tasks():
++    cursor.execute('SELECT * FROM main WHERE is_completed = false')
++    return cursor.fetchall()
++
++def delete_task(task_id):
++    cursor.execute('DELETE FROM main WHERE id = ?', (task_id,))
++    conn.commit()
++
++
++conn.close()
+Index: hackathon1/main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hackathon1/main.py b/hackathon1/main.py
+--- a/hackathon1/main.py	(revision 19fb92120c81784714180bcd814f13c2120007ad)
++++ b/hackathon1/main.py	(date 1719734015526)
+@@ -1,0 +1,32 @@
++import psycopg2
++
++HOSTNAME = 'localhost'
++USERNAME = 'postgres'
++PASSWORD = ''
++DATABASE = 'menuitems'
++
++class ToDoListItem:
++    def __init__(self, name):
++        self.name=0
++
++    def create(self):
++        query = f"CREATE TABLE main (id serial PRIMARY KEY,item varchar(256) NOT NULL,date_of_completion date,completed_by varchar(100),link text,is_completed bool NOT NULL default false);"
++        return run_query(query)
++
++    def view_all_tasks(self):
++        query = f"'SELECT * FROM main'"
++        return run_query(query)
++
++    def view_completed_tasks(self):
++        query = f"'SELECT * FROM main WHERE is_completed = true'"
++        return run_query(query)
++
++
++def run_query(query):
++    connection = psycopg2.connect(host=HOSTNAME, user=USERNAME, password=PASSWORD,  dbname=DATABASE )
++    cursor = connection.cursor()
++    cursor.execute(query)
++    connection.commit()
++    connection.close()
++
++
+Index: hackathon1/templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html>\n<head>\n  <title>To Do List</title>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"../static/styles/style.css\">\n</head>\n<body>\n  <h1>To Do List</h1>\n  <form method=\"POST\" action=\"/execute\">\n    <label for=\"option\">Choose an option:</label>\n    <select name=\"option\" id=\"option\">\n      {% for key, value in menu.items() %}\n        <option value=\"{{ key }}\">{{ value }}</option>\n      {% endfor %}\n    </select>\n    <button type=\"submit\">Submit</button>\n  </form>\n  {% if message %}\n    <ul>\n        {% for mes in message %}\n            <li>{{ mes }}<input type=\"checkbox\"> </li>\n        {% endfor %}\n    </ul>\n  {% endif %}\n</body>\n</html>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hackathon1/templates/index.html b/hackathon1/templates/index.html
+--- a/hackathon1/templates/index.html	(revision 19fb92120c81784714180bcd814f13c2120007ad)
++++ b/hackathon1/templates/index.html	(date 1719731982956)
+@@ -15,12 +15,22 @@
+     </select>
+     <button type="submit">Submit</button>
+   </form>
+-  {% if message %}
+-    <ul>
+-        {% for mes in message %}
+-            <li>{{ mes }}<input type="checkbox"> </li>
+-        {% endfor %}
+-    </ul>
++  {% if option == 1 %}
++  <ul>
++    {% for mes in message %}
++    <li>{{ mes }}</li>
++    {% endfor %}
++  </ul>
++  {% endif %}
++  {% if option == 2 %}
++  <ul>
++    {% for mes in message %}
++    <li>{{ mes }}<input type="checkbox"</li>
++    {% endfor %}
++  </ul>
++  {% endif %}
++  {% if option == 3 %}
++
+   {% endif %}
+ </body>
+ </html>
+Index: hackathon1/app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask import Flask, render_template, request\n\napp = Flask(__name__)\n\n# Sample menu options\nmenu_options = {\n    1: \"Add a new item to your to do list.\",\n    2: \"Check an item off of your to do list\",\n    3: \"View the entire list\",\n    4: \"Quit\"\n}\n\n@app.route('/')\ndef home():\n    return render_template('index.html', menu=menu_options)\n\n@app.route('/execute', methods=['POST'])\ndef execute():\n    option = int(request.form.get('option'))\n    if option in menu_options:\n        message =[\"Walk the Dog\", \"Post my letter\", \"Buy some tomatoes\"]\n\n        # message = f\"You selected: {menu_options[option]}\"\n    else:\n        message = \"Invalid option selected.\"\n    return render_template('index.html', menu=menu_options, message=message)\n\nif __name__ == '__main__':\n    app.run(debug=True, port=8000)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hackathon1/app.py b/hackathon1/app.py
+--- a/hackathon1/app.py	(revision 19fb92120c81784714180bcd814f13c2120007ad)
++++ b/hackathon1/app.py	(date 1719734039241)
+@@ -1,14 +1,17 @@
+ from flask import Flask, render_template, request
++from main import  ToDoListItem
+ 
+ app = Flask(__name__)
+ 
+ # Sample menu options
+ menu_options = {
+-    1: "Add a new item to your to do list.",
++    1: "View your entire list",
+     2: "Check an item off of your to do list",
+-    3: "View the entire list",
+-    4: "Quit"
++    3: "Quit"
+ }
++
++ToDoListItem().create()
++
+ 
+ @app.route('/')
+ def home():
+@@ -17,13 +20,25 @@
+ @app.route('/execute', methods=['POST'])
+ def execute():
+     option = int(request.form.get('option'))
+-    if option in menu_options:
++    if option == 1:
++        print(f"You selected: {menu_options[option]}")
+         message =["Walk the Dog", "Post my letter", "Buy some tomatoes"]
+ 
+-        # message = f"You selected: {menu_options[option]}"
++    elif option == 2:
++        print(f"You selected: {menu_options[option]}")
++        message =["Walk the Dog", "Post my letter", "Buy some tomatoes"]
++
++
++    elif option ==3:
++        message = f"You selected: {menu_options[option]}"
++        print(message)
++        print(f"You are leaving the program. Goodbye.")
++        return render_template('index.html', menu=menu_options, message=message, option=option)
++
+     else:
+         message = "Invalid option selected."
+-    return render_template('index.html', menu=menu_options, message=message)
++
++    return render_template('index.html', menu=menu_options, message=message, option=option)
+ 
+ if __name__ == '__main__':
+     app.run(debug=True, port=8000)
+\ No newline at end of file
+diff --git a/hackathon1/test_ganna.txt b/hackathon1/test_ganna.txt
+new file mode 100644
