@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script.js" defer async></script>
+</head>
+<body>
+<h1>Register:</h1>
+<form id="register" action="http://localhost:5000/register" method="POST" target="_blank">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="lastname">Lastname:</label>
+    <input type="text" id="lastname" name="lastname">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <button class="btn register" type="submit">Register</button>
+</form>
+<div id="error-message" style="color: red;"></div>
+<div id="root"></div>
+</body>
+</html>

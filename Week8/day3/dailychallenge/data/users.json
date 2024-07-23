@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Lili",
+    "lastname": "Lyons",
+    "email": "lili@deepfinmarkets.com",
+    "username": "Q5872H",
+    "password": "$2b$10$YrNKi8WHdec8LxhvXf8tXOWgjS.8SZ3LuQ94fpgXEEzEiXiKCLove"
+  },
+  {
+    "id": 2,
+    "name": "Lili",
+    "lastname": "Lyons",
+    "email": "krndfk",
+    "username": "lili",
+    "password": "$2b$10$CMwF8iVm4JSqPqyEnk3.5e1KuscpavQQdhpVfbJrYsmz1/oMejbx2"
+  }
+]
