@@ -17,7 +17,8 @@ const UserData = (props) => {
 
     const handleChange = (event) => {
         const { id, name, type, value, checked } = event.target;
-        setFormData(prevState => {
+        setFormDa
+        ta(prevState => {
             if (type === 'checkbox') {
                 return {
                     ...prevState,
