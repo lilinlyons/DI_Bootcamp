@@ -1,0 +1,60 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    box-sizing: border-box;
+    padding-top: 50px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.navigation-buttons, .photoSearch {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 60px;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+}
