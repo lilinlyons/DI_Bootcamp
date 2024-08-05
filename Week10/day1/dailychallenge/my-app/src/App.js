@@ -1,5 +1,4 @@
 import React, { useReducer, useState } from "react";
-import "./App.css";  // Ensure this file exists or remove this line if not needed
 import TodoList from "./component/EditTodo"
 
 
