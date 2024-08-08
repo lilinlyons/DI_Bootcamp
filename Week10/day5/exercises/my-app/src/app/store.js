@@ -1,14 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import postsReducer from "../features/posts/postsSlice";
-import usersReducer from "../features/users/usersSlice";
+import bookReducer from "../features/books/booksSlice"
+
 
 export const appReducer = combineReducers({
-  postsReducer,
-  usersReducer,
+  bookReducer
 });
 
 export default configureStore({
   reducer: appReducer,
 });
 
-// export default store;
