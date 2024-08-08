@@ -1,15 +1,14 @@
 import "./App.css";
 import PostsList from "./features/posts/PostsList";
 
-function App() {
-  return (
-    <>
-      <div>
-        {/* <h2>The Posts Project</h2> */}
-        <PostsList/>
-      </div>
-    </>
-  );
-}
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './app/store';
+
+const App = () => (
+    <Provider store={store}>
+        <PostsList />
+    </Provider>
+);
 
 export default App;
