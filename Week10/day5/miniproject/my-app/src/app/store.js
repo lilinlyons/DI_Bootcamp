@@ -1,11 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
-import manageDataSlice from "../features/manageData/manageDataSlice"
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import postsReducer from "../features/posts/postsSlice";
+import usersReducer from "../features/users/usersSlice";
 
-const store = configureStore({
-    reducer: {
-        manager: manageDataSlice
-    },
+export const appReducer = combineReducers({
+  postsReducer,
+  usersReducer,
 });
 
-export default store;
+export default configureStore({
+  reducer: appReducer,
+});
 
+// export default store;
