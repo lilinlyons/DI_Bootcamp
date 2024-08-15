@@ -7,10 +7,13 @@ const cookieParser = require('cookie-parser');
 
 const authMiddleware = require('./authMiddleware');
 
+const router = require('./auth');
+
+app.use(router)
+
 app.use(express.json());
 app.use(cookieParser());
 
-// Public route accessible without authentication
 app.get('/', (req, res) => {
     res.send('Hello, JWT Authentication!');
 });
